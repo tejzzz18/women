@@ -1,0 +1,63 @@
+{# templates/kfeedback.html #}
+{% extends "base.html" %}
+
+{% block title %}ಪ್ರತಿಕ್ರಿಯೆ — ಮಹಿಳಾ ಸುರಕ್ಷಾ ನ್ಯಾಯವಾಣಿ{% endblock %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/kannada-style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container feedback-page">
+
+  <form class="feedback-form" onsubmit="handleKFeedback(event)">
+    {# no DB wiring — client-side only as requested #}
+    <h2>ಪ್ರತಿಕ್ರಿಯೆ ಫಾರ್ಮ್</h2>
+
+    <label for="kname">ಹೆಸರು:</label>
+    <input id="kname" name="name" type="text" required>
+
+    <label for="kemail">ಇಮೇಲ್:</label>
+    <input id="kemail" name="email" type="email" required>
+
+    <label for="krating">ನಮ್ಮನ್ನು ರೇಟ್ ಮಾಡಿ:</label>
+    <select id="krating" name="rating" required>
+      <option value="1">⭐</option>
+      <option value="2">⭐⭐</option>
+      <option value="3">⭐⭐⭐</option>
+      <option value="4">⭐⭐⭐⭐</option>
+      <option value="5">⭐⭐⭐⭐⭐</option>
+    </select>
+
+    <label for="kmessage">ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆ:</label>
+    <textarea id="kmessage" name="message" rows="5" required></textarea>
+
+    <div class="form-actions">
+      <button type="submit" class="primary-btn">ಸಲ್ಲಿಸು</button>
+    </div>
+  </form>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function handleKFeedback(e) {
+  e.preventDefault();
+  const name = document.getElementById('kname').value.trim();
+  const email = document.getElementById('kemail').value.trim();
+  const message = document.getElementById('kmessage').value.trim();
+
+  if (!name || !email || !message) {
+    alert('ದಯವಿಟ್ಟು ಎಲ್ಲಾ ಅಗತ್ಯ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ.');
+    return;
+  }
+
+  // Client-side only — no DB, no network call
+  alert('ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಗೆ ಧನ್ಯವಾದಗಳು!');
+
+  // Optionally reset the form
+  e.target.reset();
+}
+</script>
+{% endblock %}

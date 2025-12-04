@@ -1,0 +1,68 @@
+{# templates/evideos.html #}
+{% extends "base.html" %}
+
+{% block title %}Self Defense Videos — Mahila Suraksha Nyayavani{% endblock %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/videos.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero container">
+  <h2>🥋 Self Defense Training Videos</h2>
+  <p>Learn essential techniques to stay strong, confident, and safe.</p>
+</section>
+
+<!-- Video Grid -->
+<section class="videos container">
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/KVpxP3ZZtAc" allowfullscreen></iframe>
+    <p>Basic Self Defense Techniques</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/CHCccWHQthE" allowfullscreen></iframe>
+    <p>Defending Against Grabs</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/SgNg84r9UUc" allowfullscreen></iframe>
+    <p>Top 5 Easy Moves</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/KVpxP3ZZtAc" allowfullscreen></iframe>
+    <p>Defending Common Attacks</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/KVpxP3ZZtAc" allowfullscreen></iframe>
+    <p>Practical Real-Life Tactics</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/M4_8PoRQP8w" allowfullscreen></iframe>
+    <p>Kicks & Punches</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/OIe6qInB8zg" allowfullscreen></iframe>
+    <p>Emergency Escape Moves</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/M4_8PoRQP8w" allowfullscreen></iframe>
+    <p>Street Safety Tips</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/kQmrbVx3d2k" allowfullscreen></iframe>
+    <p>Simple Home Training</p>
+  </div>
+
+</section>
+
+{% endblock %}

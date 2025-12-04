@@ -1,0 +1,60 @@
+{# templates/eaboutus.html #}
+{% extends "base.html" %}
+
+{% block title %}About Us — Mahila Suraksha Nyayavani{% endblock %}
+
+{% block head_extra %}
+  <!-- page-specific CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/aboutus.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<section class="about container">
+  <h2>About Us</h2>
+  <p>
+    Mahila Suraksha Nyayavani is a digital initiative to empower women and ensure their safety through
+    awareness, accessibility, and support.
+  </p>
+
+  <div class="vision-mission">
+    <div class="vm-card">
+      <h3>Our Vision</h3>
+      <p>To build a society where women feel safe, confident, and empowered to pursue their goals without fear.</p>
+    </div>
+    <div class="vm-card">
+      <h3>Our Mission</h3>
+      <p>To provide a secure digital platform for reporting harassment, spreading awareness, and offering resources like legal aid and self-defense education.</p>
+    </div>
+  </div>
+
+  <div class="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80" alt="Sindhu Sharma">
+        <h4>Sindhu Sharma</h4>
+        <p>Project Lead</p>
+      </div>
+
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1520975928316-8061a937b197?auto=format&fit=crop&w=400&q=80" alt="Arjun Rao">
+        <h4>Arjun Rao</h4>
+        <p>Frontend Developer</p>
+      </div>
+
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80" alt="Kavya N">
+        <h4>Kavya N</h4>
+        <p>UI/UX Designer</p>
+      </div>
+
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=400&q=80" alt="Rohit Shetty">
+        <h4>Rohit Shetty</h4>
+        <p>Backend Engineer</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

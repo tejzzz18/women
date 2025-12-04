@@ -1,0 +1,63 @@
+{# templates/kvideos.html #}
+{% extends "base.html" %}
+
+{% block title %}ಸ್ವಯಂ ರಕ್ಷಣಾ ವೀಡಿಯೊಗಳು — ಮಹಿಳಾ ಸುರಕ್ಷಾ ನ್ಯಾಯವಾಣಿ{% endblock %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/kannada-style.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="hero container">
+  <h2>🥋 ಸ್ವಯಂ ರಕ್ಷಣಾ ತರಬೇತಿ ವೀಡಿಯೊಗಳು</h2>
+  <p>ಬಲವಾದ, ಆತ್ಮವಿಶ್ವಾಸಿ ಮತ್ತು ಸುರಕ್ಷಿತವಾಗಿರಲು ಅಗತ್ಯ ತಂತ್ರಗಳನ್ನು ಕಲಿಯಿರಿ.</p>
+</section>
+
+<!-- Video Grid -->
+<section class="videos container">
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/KVpxP3ZZtAc" allowfullscreen></iframe>
+    <p>ಮೂಲಭೂತ ಆತ್ಮರಕ್ಷಣಾ ತಂತ್ರಗಳು</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/CHCccWHQthE" allowfullscreen></iframe>
+    <p>ಹಿಡಿತಗಳಿಂದ ರಕ್ಷಿಸಿಕೊಳ್ಳುವುದು</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/SgNg84r9UUc" allowfullscreen></iframe>
+    <p>ಸರಳ 5 ಚಲನೆಗಳು</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/KVpxP3ZZtAc" allowfullscreen></iframe>
+    <p>ಸಾಮಾನ್ಯ ದಾಳಿಗಳನ್ನು ಎದುರಿಸುವುದು</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/KVpxP3ZZtAc" allowfullscreen></iframe>
+    <p>ಪ್ರಾಯೋಗಿಕ ತಂತ್ರಗಳು</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/M4_8PoRQP8w" allowfullscreen></iframe>
+    <p>ಕಿಕ್ ಮತ್ತು ಪುಂಚ್ ವಿಧಾನಗಳು</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/OIe6qInB8zg" allowfullscreen></iframe>
+    <p>ತುರ್ತು ತಪ್ಪಿಸಿಕೊಳ್ಳುವ ವಿಧಾನಗಳು</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/M4_8PoRQP8w" allowfullscreen></iframe>
+    <p>ರಸ್ತೆ ಸುರಕ್ಷತಾ ಸಲಹೆಗಳು</p>
+  </div>
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/kQmrbVx3d2k" allowfullscreen></iframe>
+    <p>ಸರಳ ಮನೆ ತರಬೇತಿ</p>
+  </div>
+</section>
+{% endblock %}

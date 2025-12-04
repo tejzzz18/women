@@ -1,0 +1,54 @@
+{# templates/karticle.html #}
+{% extends "base.html" %}
+
+{% block title %}ಲೇಖನಗಳು — ಮಹಿಳಾ ಸುರಕ್ಷಾ ನ್ಯಾಯವಾಣಿ{% endblock %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/kannada-style.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="articles-page container">
+
+  <header class="page-header">
+    <h1>ಲೇಖನಗಳು</h1>
+    <p class="subtitle">ವಿವಿಧ ರೀತಿಯ ಹಿಂಸಾಚಾರಗಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಮಾಹಿತಿಯನ್ನು ಅನ್ವೇಷಿಸಿ.</p>
+  </header>
+
+  <div class="card-grid">
+
+    <div class="card"
+         data-link="{{ url_for('physical_article') }}">
+      <h2>ಶಾರೀರಿಕ ಹಿಂಸಾಚಾರ</h2>
+      <p>ದೇಹದ ಹಾನಿ ಮತ್ತು ದೌರ್ಜನ್ಯ ಪ್ರಕರಣಗಳನ್ನು ಒಳಗೊಂಡಿದೆ.</p>
+    </div>
+
+    <div class="card"
+         data-link="{{ url_for('digital_article') }}">
+      <h2>ಡಿಜಿಟಲ್ ಹಿಂಸಾಚಾರ</h2>
+      <p>ಸೈಬರ್ ಅಪರಾಧಗಳು, ಕಿರುಕುಳ ಮತ್ತು ಆನ್‌ಲೈನ್ ಹಿಂಸಾಚಾರವನ್ನು ಒಳಗೊಂಡಿದೆ.</p>
+    </div>
+
+    <div class="card"
+         data-link="{{ url_for('emotional_article') }}">
+      <h2>ಭಾವನಾತ್ಮಕ ಹಿಂಸಾಚಾರ</h2>
+      <p>ಮಾನಸಿಕ ದೌರ್ಜನ್ಯ ಮತ್ತು ಭಾವನಾತ್ಮಕ ನೋವು ಪ್ರಕರಣಗಳನ್ನು ಚರ್ಚಿಸುತ್ತದೆ.</p>
+    </div>
+
+  </div>
+
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Make Kannada cards clickable without JS warnings
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
+      window.location.href = card.dataset.link;
+    });
+  });
+</script>
+{% endblock %}

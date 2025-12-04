@@ -1,0 +1,66 @@
+{# templates/kaboutus.html #}
+{% extends "base.html" %}
+
+{% block title %}ನಮ್ಮ ಬಗ್ಗೆ — ಮಹಿಳಾ ಸುರಕ್ಷಾ ನ್ಯಾಯವಾಣಿ{% endblock %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/kannada-style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+
+<section class="about container">
+
+  <h2>ನಮ್ಮ ಬಗ್ಗೆ</h2>
+  <p>
+    ಮಹಿಳಾ ಸುರಕ್ಷಾ ನ್ಯಾಯವಾಣಿ ಮಹಿಳೆಯರ ಶಕ್ತಿಕರಣ ಮತ್ತು ಅವರ ಭದ್ರತೆಯನ್ನು ಖಚಿತಪಡಿಸಲು ಪ್ರಾರಂಭಿಸಿದ ಡಿಜಿಟಲ್ ಉಪಕ್ರಮವಾಗಿದೆ.
+  </p>
+
+  <div class="vision-mission">
+    <div class="vm-card">
+      <h3>ನಮ್ಮ ದೃಷ್ಟಿ</h3>
+      <p>ಮಹಿಳೆಯರು ಭಯವಿಲ್ಲದೆ ತಮ್ಮ ಗುರಿಗಳನ್ನು ಬೆನ್ನಟ್ಟುವಂತೆ ಸುರಕ್ಷಿತ ಮತ್ತು ಶಕ್ತಿಶಾಲಿ ಸಮಾಜವನ್ನು ನಿರ್ಮಿಸುವುದು.</p>
+    </div>
+
+    <div class="vm-card">
+      <h3>ನಮ್ಮ ಮಿಷನ್</h3>
+      <p>ಅಪರಾಧ ವರದಿ, ಜಾಗೃತಿ ಮತ್ತು ಕಾನೂನು ಸಹಾಯ ಹಾಗೂ ಸ್ವಯಂ ರಕ್ಷಣಾ ಶಿಕ್ಷಣವನ್ನು ಒದಗಿಸಲು ಸುರಕ್ಷಿತ ಡಿಜಿಟಲ್ ವೇದಿಕೆಯನ್ನು ಒದಗಿಸುವುದು.</p>
+    </div>
+  </div>
+
+  <div class="team">
+    <h2>ನಮ್ಮ ತಂಡವನ್ನು ಭೇಟಿ ಮಾಡಿ</h2>
+
+    <div class="team-grid">
+
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150/4A90E2/FFFFFF?text=Sindhu" alt="Team Member">
+        <h4>ಸಿಂಧು ಶರ್ಮಾ</h4>
+        <p>ಪ್ರಾಜೆಕ್ಟ್ ಲೀಡ್</p>
+      </div>
+
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150/50C878/FFFFFF?text=Arjun" alt="Team Member">
+        <h4>ಅರ್ಜುನ್ ರಾವ್</h4>
+        <p>ಫ್ರಂಟ್‌ಎಂಡ್ ಡೆವಲಪರ್</p>
+      </div>
+
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150/E94B3C/FFFFFF?text=Kavya" alt="Team Member">
+        <h4>ಕಾವ್ಯ ಎನ್</h4>
+        <p>UI/UX ವಿನ್ಯಾಸಕರ</p>
+      </div>
+
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150/FFA500/FFFFFF?text=Rohit" alt="Team Member">
+        <h4>ರೋಹಿತ್ ಶೆಟ್ಟಿ</h4>
+        <p>ಬ್ಯಾಕ್‌ಎಂಡ್ ಎಂಜಿನಿಯರ್</p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+{% endblock %}

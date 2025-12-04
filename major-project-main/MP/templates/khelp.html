@@ -1,0 +1,98 @@
+{# templates/khelp.html #}
+{% extends "base.html" %}
+
+{% block title %}ಸಹಾಯ ಪಡೆಯಿರಿ — ಮಹಿಳಾ ಸುರಕ್ಷಾ ನ್ಯಾಯವಾಣಿ{% endblock %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/kannada-style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<section class="help-page container">
+  <header class="help-header">
+    <h1>ಸಹಾಯ ಪಡೆಯಿರಿ</h1>
+    <p class="lead">ನೀವು ತಕ್ಷಣದ ಅಪಾಯದಲ್ಲಿದ್ದರೆ, ದಯವಿಟ್ಟು ಒಬ್ಬ ತುರ್ತು ಸೇವೆಯನ್ನು ಕರೆಮಾಡಿ ಅಥವಾ ಕೆಳಗಿನ ಸಹಾಯವಾಣಿ ಸಂಖ್ಯೆಯನ್ನು ಬಳಸಿ.</p>
+  </header>
+
+  <!-- Emergency Quick Buttons -->
+  <div class="section">
+    <h2>ತುರ್ತು ಕ್ರಮಗಳು</h2>
+    <div class="emergency-buttons">
+      <button type="button" data-tel="100" class="call-btn">🚨 ಪೊಲೀಸ್ ಕರೆ (100)</button>
+      <button type="button" data-tel="1091" class="call-btn">📞 ಮಹಿಳಾ ಸಹಾಯವಾಣಿ (1091)</button>
+      <button type="button" data-tel="181" class="call-btn">🆘 ರಾಜ್ಯ ಸಹಾಯವಾಣಿ (181)</button>
+      <button type="button" data-tel="112" class="call-btn">🔔 ರಾಷ್ಟ್ರೀಯ ತುರ್ತು (112)</button>
+    </div>
+    <p class="muted">ಮೊಬೈಲ್-девайс್ನಲ್ಲಿ ಇದು ಡಯಲರ್ ತೆರೆಯುತ್ತಾ ಕರೆ ಮಾಡುವ ಪ್ರಯತ್ನ ಮಾಡುತ್ತದೆ; ಡೆಸ್ಕ್‌ಟಾಪ್‌ನಲ್ಲಿ ಸಂಖ್ಯೆಯನ್ನು ಅಲರ್ಟ್ ಆಗಿ ತೋರಿಸುತ್ತದೆ.</p>
+  </div>
+
+  <!-- Helpline Numbers -->
+  <div class="section helplines">
+    <h2>ಪ್ರಮುಖ ಸಹಾಯವಾಣಿ ಸಂಖ್ಯೆಗಳು</h2>
+    <ul>
+      <li>ಪೊಲೀಸ್ ನಿಯಂತ್ರಣ ಕೊಠಡಿ: <a href="tel:100">100</a></li>
+      <li>ಮಹಿಳಾ ಸಹಾಯವಾಣಿ: <a href="tel:1091">1091</a></li>
+      <li>ಗೃಹ ಹಿಂಸೆ ಸಹಾಯವಾಣಿ: <a href="tel:181">181</a></li>
+      <li>ಚೈಲ್ಡ್‌ಲೈನ್: <a href="tel:1098">1098</a></li>
+      <li>ರಾಷ್ಟ್ರೀಯ ತುರ್ತು ಸಂಖ್ಯೆ: <a href="tel:112">112</a></li>
+    </ul>
+  </div>
+
+  <!-- Quick Contact Form -->
+  <div class="section">
+    <h2>ತಕ್ಷಣ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ</h2>
+    <form id="kquickContact" onsubmit="handleKQuickContact(event)" class="quick-contact">
+      <label for="kname" class="sr-only">ನಿಮ್ಮ ಹೆಸರು</label>
+      <input id="kname" name="name" type="text" placeholder="ನಿಮ್ಮ ಹೆಸರು" required>
+
+      <label for="kemail" class="sr-only">ನಿಮ್ಮ ಇಮೇಲ್</label>
+      <input id="kemail" name="email" type="email" placeholder="ನಿಮ್ಮ ಇಮೇಲ್ (ಐಚ್ಛಿಕ)">
+
+      <label for="kmsg" class="sr-only">ನಿಮ್ಮ ಸಮಸ್ಯೆಯನ್ನು ವಿವರಿಸಿ</label>
+      <textarea id="kmsg" name="message" placeholder="ನಿಮ್ಮ ಸಮಸ್ಯೆಯನ್ನು ವಿವರಿಸಿ..." required rows="5"></textarea>
+
+      <div class="form-actions">
+        <button type="submit" class="primary-btn">ಕಳುಹಿಸಿ</button>
+      </div>
+    </form>
+    <p class="muted">ಈ ಫಾರ್ಮ್ ತಾತ್ಕಾಲಿಕ ವರದಿ ಮಾತ್ರ — ತಕ್ಷಣ ಸಹಾಯಕ್ಕೆ, ದಯವಿಟ್ಟು ಮೇಲಿನ ಸಂಖ್ಯೆಯನ್ನು ಕರೆಮಾಡಿ.</p>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Try to open phone dialer on mobile, fallback to alert on desktop
+  document.querySelectorAll('.call-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const number = btn.dataset.tel;
+      // Try tel: protocol
+      window.location.href = 'tel:' + number;
+      // Fallback after a short delay for desktops
+      setTimeout(() => {
+        if (!/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+          alert('ದಯವಿಟ್ಟು ಕರೆಮಾಡಿ: ' + number);
+        }
+      }, 500);
+    });
+  });
+
+  // Simple client-side handler for the quick contact form
+  function handleKQuickContact(e) {
+    e.preventDefault();
+    const name = document.getElementById('kname').value.trim();
+    const email = document.getElementById('kemail').value.trim();
+    const msg = document.getElementById('kmsg').value.trim();
+
+    if (!name || !msg) {
+      alert('ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರು ಮತ್ತು ಸಂದೇಶ ನಮೂದಿಸಿ.');
+      return;
+    }
+
+    // TODO: Replace with real POST to backend when ready
+    alert('ಧನ್ಯವಾದಗಳು, ' + name + ' — ನಿಮ್ಮ ಸಂದೇಶವನ್ನು ಸ್ವೀಕರಿಸಲಾಗಿದೆ. ತುರ್ತು ಸಂದರ್ಭಗಳಲ್ಲಿ ಮೇಲಿನ ದೂರವಾಣಿ ಸಂಖ್ಯೆಗಳನ್ನು ಕರೆಮಾಡಿ.');
+    e.target.reset();
+  }
+</script>
+{% endblock %}

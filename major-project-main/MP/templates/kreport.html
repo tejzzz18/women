@@ -1,0 +1,57 @@
+{# templates/kreport.html #}
+{% extends "base.html" %}
+
+{% block title %}ಘಟನೆ ವರದಿ — ಮಹಿಳಾ ಸುರಕ್ಷಾ ನ್ಯಾಯವಾಣಿ{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/kannada-style.css') }}">
+{% endblock %}
+
+{% block content %}
+<section id="report" class="container">
+
+  <h2 id="reportTitle">ಘಟನೆ ವರದಿ ಫಾರ್ಮ್</h2>
+
+  <form id="crimeForm" enctype="multipart/form-data">
+
+    <label for="name">ನಿಮ್ಮ ಹೆಸರು</label>
+    <input type="text" id="name" required autocomplete="name">
+
+    <label for="contact">ಇಮೇಲ್ ಅಥವಾ ದೂರವಾಣಿ ಸಂಖ್ಯೆ</label>
+    <input type="text" id="contact" required autocomplete="email">
+
+    <label for="category">ವರ್ಗ</label>
+    <select id="category" required>
+      <option value="">ವರ್ಗ ಆಯ್ಕೆಮಾಡಿ</option>
+      <option value="digital">ಡಿಜಿಟಲ್ ಹಿಂಸಾಚಾರ</option>
+      <option value="emotional">ಭಾವನಾತ್ಮಕ ಹಿಂಸಾಚಾರ</option>
+      <option value="physical">ಭೌತಿಕ ಹಿಂಸಾಚಾರ</option>
+    </select>
+
+    <label for="location">ಸ್ಥಳ</label>
+    <input type="text" id="location" required>
+
+    <label for="incident">ಘಟನೆಯ ವಿವರ ನೀಡಿ</label>
+    <textarea id="incident" rows="4" required></textarea>
+
+    <label for="evidence">ಸಾಕ್ಷ್ಯಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ (ಚಿತ್ರ/ಡಾಕ್ಯುಮೆಂಟ್ — ಐಚ್ಛಿಕ)</label>
+    <input type="file" id="evidence" accept="image/*,application/pdf" multiple>
+
+    <button type="submit">ಸಲ್ಲಿಸಿ</button>
+  </form>
+
+  <p id="formMsg"></p>
+
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('crimeForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  document.getElementById('formMsg').innerText =
+    'ಘಟನೆ ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಸಲಾಗಿದೆ. ಅಧಿಕಾರಿಗಳು ಶೀಘ್ರದಲ್ಲೇ ಸಂಪರ್ಕಿಸುತ್ತಾರೆ.';
+  this.reset();
+});
+</script>
+{% endblock %}

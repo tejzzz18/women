@@ -1,0 +1,96 @@
+{# templates/ehelp.html #}
+{% extends "base.html" %}
+
+{% block title %}Get Help — Mahila Suraksha Nyayavani{% endblock %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/help.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="help-page container">
+  <header class="help-header">
+    <h1>Get Help</h1>
+    <p class="lead">If you are in immediate danger, use the emergency buttons below or call the local authorities.</p>
+  </header>
+
+  <!-- Emergency Quick Buttons -->
+  <div class="section">
+    <h2>Emergency Actions</h2>
+    <div class="emergency-buttons">
+      <button type="button" onclick="tryCall('100')">🚨 Call Police (100)</button>
+      <button type="button" onclick="tryCall('1091')">📞 Women Helpline (1091)</button>
+      <button type="button" onclick="tryCall('181')">🆘 State Helpline (181)</button>
+      <button type="button" onclick="tryCall('112')">🔔 National Emergency (112)</button>
+    </div>
+    <p class="muted">On mobile devices this will try to open your phone dialer. On desktop it will show the number to call.</p>
+  </div>
+
+  <!-- Helpline Numbers -->
+  <div class="section helplines">
+    <h2>Important Helplines</h2>
+    <ul>
+      <li>Police Control Room: <a href="tel:100">100</a></li>
+      <li>Women Helpline: <a href="tel:1091">1091</a></li>
+      <li>Domestic Violence Helpline: <a href="tel:181">181</a></li>
+      <li>Childline: <a href="tel:1098">1098</a></li>
+      <li>National Emergency Number: <a href="tel:112">112</a></li>
+    </ul>
+  </div>
+
+  <!-- Quick Contact Form -->
+  <div class="section">
+    <h2>Contact Us Immediately</h2>
+    <form class="quick-contact" onsubmit="handleQuickContact(event)">
+      <label for="qname" class="sr-only">Your name</label>
+      <input id="qname" name="name" type="text" placeholder="Your Name" required>
+
+      <label for="qemail" class="sr-only">Your email</label>
+      <input id="qemail" name="email" type="email" placeholder="Your Email (optional)">
+
+      <label for="qmsg" class="sr-only">Describe your issue</label>
+      <textarea id="qmsg" name="message" placeholder="Describe your issue..." required></textarea>
+
+      <div class="form-actions">
+        <button type="submit" class="primary-btn submit-btn">Send</button>
+      </div>
+    </form>
+    <p class="muted">This form is a quick report — if you'd like direct assistance, please call the numbers above.</p>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Try to invoke phone dialer on mobile; fallback to alert with number on desktop.
+  function tryCall(number) {
+    const telUrl = 'tel:' + number;
+    // Attempt to open dialer; on many desktops this will do nothing, so we show a fallback.
+    window.location.href = telUrl;
+    // For a safer fallback, show a message after a short delay if the dialer didn't open.
+    setTimeout(function() {
+      if (!/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        alert('Please call: ' + number);
+      }
+    }, 500);
+  }
+
+  // Client-side handling of the quick contact form (no backend POST by default).
+  function handleQuickContact(e) {
+    e.preventDefault();
+    const name = document.getElementById('qname').value.trim();
+    const email = document.getElementById('qemail').value.trim();
+    const message = document.getElementById('qmsg').value.trim();
+
+    if (!name || !message) {
+      alert('Please provide your name and a short message.');
+      return;
+    }
+
+    // TODO: Replace with fetch POST to a backend endpoint if/when you implement one.
+    alert('Thank you, ' + name + '. We have received your message.\n\nIf this is an emergency, please call the helpline numbers above.');
+
+    e.target.reset();
+  }
+</script>
+{% endblock %}

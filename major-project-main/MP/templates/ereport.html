@@ -1,0 +1,93 @@
+{# templates/ereport.html #}
+{% extends "base.html" %}
+
+{% block title %}Report a Crime — Mahila Suraksha Nyayavani{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section id="report" class="container">
+  <h2 id="reportTitle">Crime Reporting Form</h2>
+
+  <!-- form posts to Flask endpoint 'submit_report' -->
+  <form id="crimeForm" method="POST" action="{{ url_for('submit_report') }}" enctype="multipart/form-data" novalidate>
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required autocomplete="name" />
+
+    <label for="contact">Email or Phone Number</label>
+    <input type="text" id="contact" name="contact" required autocomplete="email" />
+
+    <label for="category">Category</label>
+    <select id="category" name="category" required>
+      <option value="">Select Category</option>
+      <option value="digital">Digital Violence</option>
+      <option value="emotional">Emotional Violence</option>
+      <option value="physical">Physical Violence</option>
+    </select>
+
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" required autocomplete="off" />
+
+    <label for="incident">Describe the incident</label>
+    <textarea id="incident" name="incident" rows="4" required></textarea>
+
+    <label for="evidence">Upload Evidence (images/documents, optional)</label>
+    <input type="file" id="evidence" name="evidence" accept="image/*,application/pdf" multiple />
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="formMsg" role="status" aria-live="polite"></p>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  (function () {
+    const form = document.getElementById('crimeForm');
+    const msg = document.getElementById('formMsg');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      msg.innerText = 'Submitting...';
+      msg.style.color = '';
+
+      const formData = new FormData(form);
+
+      try {
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          body: formData
+        });
+
+        if (!resp.ok) {
+          // try to parse JSON error
+          let err = await resp.json().catch(() => null);
+          msg.innerText = err && err.error ? err.error : 'Submission failed. Please try again.';
+          msg.style.color = 'crimson';
+          return;
+        }
+
+        const data = await resp.json().catch(() => null);
+
+        if (data && data.success) {
+          msg.innerText = 'Report submitted successfully. Reference ID: ' + (data.id || 'N/A');
+          msg.style.color = 'green';
+          form.reset();
+        } else {
+          msg.innerText = (data && data.error) ? data.error : 'Submission completed but no confirmation received.';
+          msg.style.color = 'crimson';
+        }
+      } catch (err) {
+        console.error(err);
+        msg.innerText = 'Network or server error. Please try again later.';
+        msg.style.color = 'crimson';
+      }
+    });
+  })();
+</script>
+{% endblock %}

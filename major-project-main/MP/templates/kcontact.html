@@ -1,0 +1,47 @@
+{# templates/kcontact.html #}
+{% extends "base.html" %}
+
+{% block title %}ಸಂಪರ್ಕಿಸಿ — ಮಹಿಳಾ ಸುರಕ್ಷಾ ನ್ಯಾಯವಾಣಿ{% endblock %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/kannada-style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container contact-page">
+
+  <!-- Contact Information -->
+  <div class="contact-info">
+    <h2>ಸಂಪರ್ಕ ಮಾಹಿತಿ</h2>
+    <p><strong>ಇಮೇಲ್:</strong> support@nyayavani.org</p>
+    <p><strong>ದೂರವಾಣಿ:</strong> +91 98765 43210</p>
+    <p><strong>ವಿಳಾಸ:</strong> ಮಹಿಳಾ ಸುರಕ್ಷಾ ಸೆಲ್, ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ, ಭಾರತ</p>
+
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18..."
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="contact-form">
+    <h2>ನಮಗೆ ಸಂದೇಶ ಕಳುಹಿಸಿ</h2>
+
+    <form onsubmit="event.preventDefault(); alert('ಧನ್ಯವಾದಗಳು! ನಿಮ್ಮ ಸಂದೇಶವನ್ನು ಕಳುಹಿಸಲಾಗಿದೆ.'); this.reset();">
+      <input type="text" name="name" placeholder="ನಿಮ್ಮ ಹೆಸರು" required>
+      <input type="email" name="email" placeholder="ನಿಮ್ಮ ಇಮೇಲ್" required>
+      <input type="text" name="subject" placeholder="ವಿಷಯ" required>
+      <textarea name="message" rows="5" placeholder="ನಿಮ್ಮ ಸಂದೇಶ" required></textarea>
+
+      <button type="submit">ಸಂದೇಶ ಕಳುಹಿಸಿ</button>
+    </form>
+  </div>
+
+</div>
+{% endblock %}

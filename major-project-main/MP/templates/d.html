@@ -1,0 +1,381 @@
+{# templates/d.html #}
+{% extends "base.html" %}
+
+{% block title %}Digital Violence — Mahila Suraksha Nyayavani{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/article.css') }}">
+<style>
+:root{ --card-height:220px; --overlay: rgba(0,0,0,0.55); --accent: rgba(255,255,255,0.18); }
+*{box-sizing:border-box;}
+.container.article-detail { max-width:1200px; margin:20px auto; padding:0 18px; color:#222; }
+.page-header{ text-align:center; margin:18px auto 30px; padding:20px; background:rgba(0,0,0,0.6); color:#fff; border-radius:8px; }
+.wrap{ max-width:1400px; margin:0 auto 60px; padding:0 18px; }
+.articles{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); grid-auto-rows:235px; gap:20px; }
+.card{ height:var(--card-height); border-radius:14px; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:16px; color:#fff; box-shadow:0 8px 20px rgba(0,0,0,0.45); transition:transform .25s ease, box-shadow .25s ease; background-size:cover; background-position:center; }
+.card:hover{ transform:translateY(-6px); box-shadow:0 14px 30px rgba(0,0,0,0.55); }
+.card::after{ content:""; position:absolute; inset:0; background:var(--overlay); z-index:0; }
+.card-content{ position:relative; z-index:1; width:100%; }
+.desc{ margin:0 0 10px 0; font-size:14px; line-height:1.4; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis; }
+.read-more{ display:inline-block; padding:8px 12px; border-radius:8px; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; font-size:13px; border:1px solid rgba(255,255,255,0.08); }
+.read-more:hover{ background:rgba(255,255,255,0.28); }
+@media (max-width:520px){ .desc{ font-size:13px } }
+</style>
+{% endblock %}
+
+{% block content %}
+<header class="page-header container">
+  <h1>Digital Violence Articles</h1>
+  <p>Content about cyber harassment, how to gather digital evidence, reporting tools, and protecting privacy.</p>
+</header>
+
+<div class="wrap container">
+  <div class="articles">
+
+    <!-- 1 -->
+    <div class="card" style="background-image:url('https://th-i.thgim.com/public/incoming/k1xcrt/article67902776.ece/alternates/LANDSCAPE_1200/CCI_UDHindu_KSL_UCC80K802_R1606400126_4_ba47d1d5-1a1e-493f-8706-bd44b9a7ed14.jpg');">
+      <div class="card-content">
+        <p class="desc">Harassment and abuse of Indian women on dating apps: a narrative review</p>
+        <a class="read-more" href="https://www.nature.com/articles/s41599-024-04286-6" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="card" style="background-image:url('https://tse4.mm.bing.net/th/id/OIP.YIfvxXZf5NhY71m03ahpVQHaEw?pid=Api&P=0&h=180');">
+      <div class="card-content">
+        <p class="desc">Bengaluru’s growing cyber-bullying problem</p>
+        <a class="read-more" href="https://www.thehindu.com/news/national/karnataka/tech-troubles-cyber-bullying-on-the-rise-among-children/article67864256.ece" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="card" style="background-image:url('https://tse2.mm.bing.net/th/id/OIP.dITSmYZVihC5oyF9tTy30gHaFy?pid=Api&P=0&h=180');">
+      <div class="card-content">
+        <p class="desc">Study on online child sexual abuse recommends digital literacy in curriculum</p>
+        <a class="read-more" href="https://www.thehindu.com/news/national/karnataka/study-on-online-child-sexual-abuse-recommends-inclusion-of-digital-literacy-in-school-curriculum/article69691216.ece" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="card" style="background-image:url('https://tse2.mm.bing.net/th/id/OIP.PQCc50l5nSJgT0YWBr6ZuQHaGb?pid=Api&P=0&h=180');">
+      <div class="card-content">
+        <p class="desc">Man threatens acid attack on woman over her clothes — Bengaluru employer fires him</p>
+        <a class="read-more" href="https://www.ndtv.com/bangalore-news/man-threatens-acid-attack-on-woman-over-her-clothes-bengaluru-employer-fires-him-6764329" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="card" style="background-image:url('https://static.toiimg.com/thumb/msid-122371911,imgsize-104180,width-400,height-225,resizemode-72/122371911.jpg');">
+      <div class="card-content">
+        <p class="desc">Youth held for posting voyeuristic videos of women walking on Bengaluru streets</p>
+        <a class="read-more" href="https://timesofindia.indiatimes.com/city/bengaluru/youth-held-for-posting-voyeuristic-videos-of-women-walking-on-bengaluru-streets/articleshow/122371914.cms" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="card" style="background-image:url('https://tse2.mm.bing.net/th/id/OIP.kSShR1wjDTyrjOcVTd5ViwHaFM?pid=Api&P=0&h=180');">
+      <div class="card-content">
+        <p class="desc">Man arrested for harassing over 30 women online for sexual favours</p>
+        <a class="read-more" href="https://www.thehindu.com/news/cities/bangalore/man-arrested-for-harassing-over-30-women-online-for-sexual-favours/article66556901.ece" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="card" style="background-image:url('https://static.toiimg.com/thumb/msid-122982463,imgsize-28268,width-400,height-225,resizemode-72/122982463.jpg');">
+      <div class="card-content">
+        <p class="desc">Case against stalker for harassing woman with morphed photos</p>
+        <a class="read-more" href="https://timesofindia.indiatimes.com/city/hyderabad/case-against-stalker-for-harassing-woman-with-morphed-photos/articleshow/122982465.cms?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="card" style="background-image:url('https://akm-img-a-in.tosshub.com/indiatoday/images/story/202507/hidden-camera-221742546-16x9_0.png?VersionId=39PDKa9BsjzRU1aGsflcPwLS4rt3.W6s&size=690:388');">
+      <div class="card-content">
+        <p class="desc">Pune man films wife bathing, blackmails her for home, car EMIs</p>
+        <a class="read-more" href="https://www.indiatoday.in/cities/pune/story/pune-government-officer-records-wifes-bathing-videos-blackmails-her-for-dowry-case-filed-2759801-2025-07-23?utm_source=chatgpt.com?utm_source=AI_bar_share&utm_medium=whatsapp&utm_campaign=tracking" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="card" style="background-image:url('https://c.ndtvimg.com/2025-03/u9m9iku8_man-held-for-blackmailing-women-with-morphed-photos-in-delhi_625x300_15_March_25.jpg?im=FeatureCrop,algorithm=dnn,width=773,height=435');">
+      <div class="card-content">
+        <p class="desc">Man, 23, arrested for blackmailing women with morphed photos in Delhi</p>
+        <a class="read-more" href="https://www.ndtv.com/india-news/man-23-arrested-for-blackmailing-women-with-morphed-photos-for-amusement-in-delhi-7928223" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="card" style="background-image:url('https://c.ndtvimg.com/2024-10/qq3kd518_phone_625x300_22_October_24.jpg?im=FeatureCrop,algorithm=dnn,width=773,height=435');">
+      <div class="card-content">
+        <p class="desc">59 Hongkongers tricked into undressing during video chats, extorted</p>
+        <a class="read-more" href="https://www.ndtv.com/world-news/naked-chat-blackmail-59-people-in-hong-kong-duped-into-undressing-during-video-chats-6843812" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="card" style="background-image:url('https://i.ndtvimg.com/i/2016-05/arrest-generic_650x400_71463458726.jpg?downsize=773:435');">
+      <div class="card-content">
+        <p class="desc">Mumbai teen arrested for blackmailing 22 women with morphed videos</p>
+        <a class="read-more" href="https://www.ndtv.com/mumbai-news/teen-arrested-for-blackmailing-women-with-morphed-videos-in-mumbai-cops-3206519" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="card" style="background-image:url('https://static.toiimg.com/thumb/msid-75709511,imgsize-162807,width-400,height-225,resizemode-72/75709511.jpg');">
+      <div class="card-content">
+        <p class="desc">First online stalking, sexual harassment and blackmailing case during lockdown in Bhopal</p>
+        <a class="read-more" href="https://timesofindia.indiatimes.com/city/bhopal/first-online-stalking-sexual-harassment-and-blackmailing-case-during-lockdown-reported-in-bhopal/articleshow/75709513.cms" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="card" style="background-image:url('https://static.toiimg.com/thumb/msid-121523683,imgsize-38770,width-400,height-225,resizemode-72/121523683.jpg');">
+      <div class="card-content">
+        <p class="desc">Businessman held for harassing & blackmailing women using fake social accounts</p>
+        <a class="read-more" href="https://timesofindia.indiatimes.com/city/delhi/businessman-held-for-harassing-and-blackmailing-woman-using-fake-social-media-accounts/articleshow/121523684.cms" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="card" style="background-image:url('https://ichef.bbci.co.uk/news/1024/cpsprodpb/DFDE/production/_131301375_976x07_bhoomi.jpg.webp');">
+      <div class="card-content">
+        <p class="desc">Inside the instant loan app scam that blackmails with nudes</p>
+        <a class="read-more" href="https://www.bbc.com/news/world-asia-india-66964510" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="card" style="background-image:url('https://static.toiimg.com/thumb/msid-123752159,imgsize-30872,width-400,height-225,resizemode-72/raj-man-held-for-online-extortion-forcing-satna-woman-to-convert.jpg');">
+      <div class="card-content">
+        <p class="desc">Raj man held for online extortion, forcing Satna woman to 'convert'</p>
+        <a class="read-more" href="https://timesofindia.indiatimes.com/city/bhopal/raj-man-held-for-online-extortion-forcing-satna-woman-to-convert/articleshow/123752162.cms?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 16 -->
+    <div class="card" style="background-image:url('https://img.etimg.com/thumb/msid-117397010,width-300,height-225,imgsize-110944,resizemode-75/representative-image.jpg');">
+      <div class="card-content">
+        <p class="desc">How a Delhi man blackmailed women after doctoring their images using AI</p>
+        <a class="read-more" href="https://economictimes.indiatimes.com/news/india/sunno-kuch-kaam-hai-how-a-delhi-man-blackmailed-extorted-women-after-doctoring-their-images-using-ai/articleshow/117396036.cms?utm_source%3Dwhatsapp_web%26utm_medium%3Dsocial%26utm_campaign%3Dsocialsharebuttons" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 17 -->
+    <div class="card" style="background-image:url('https://tse2.mm.bing.net/th/id/OIP.j5ckFrrYHYc85_YzdpQmiAHaD9?pid=Api&P=0&h=180');">
+      <div class="card-content">
+        <p class="desc">Sulli Deals</p>
+        <a class="read-more" href="https://en.wikipedia.org/wiki/Sulli_Deals?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 18 (duplicate story item intentionally preserved) -->
+    <div class="card" style="background-image:url('https://static.toiimg.com/thumb/msid-121523683,imgsize-38770,width-400,height-225,resizemode-72/121523683.jpg');">
+      <div class="card-content">
+        <p class="desc">Businessman held for harassing & blackmailing woman using fake social accounts</p>
+        <a class="read-more" href="https://timesofindia.indiatimes.com/city/delhi/businessman-held-for-harassing-and-blackmailing-woman-using-fake-social-media-accounts/articleshow/121523684.cms" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 19 -->
+    <div class="card" style="background-image:url('https://www.mypunepulse.com/wp-content/uploads/2025/03/IMG-20250317-WA0027.jpg');">
+      <div class="card-content">
+        <p class="desc">Pune police arrest 19-year-old for blackmailing woman with morphed nudes on Instagram</p>
+        <a class="read-more" href="https://www.mypunepulse.com/pune-police-arrest-19-year-old-man-for-blackmailing-woman-with-morphed-nude-photos-on-instagram/?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 20 -->
+    <div class="card" style="background-image:url('https://media.newindianexpress.com/newindianexpress%2F2024-08-24%2Fjpc4wx91%2FANI_20240824034559.jpg?w=1024&auto=format%2Ccompress&fit=max');">
+      <div class="card-content">
+        <p class="desc">Man arrested for blackmailing minor girl using morphed photographs in Puducherry</p>
+        <a class="read-more" href="https://www.newindianexpress.com/states/tamil-nadu/2025/Jan/21/man-arrested-for-blackmailing-minor-girl-using-morphed-photographs-in-puducherry?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 21 -->
+    <div class="card" style="background-image:url('https://ommcomnews.com/wp-content/uploads/2025/07/baisinga-Mayurbhanj.jpeg');">
+      <div class="card-content">
+        <p class="desc">Youth arrested in Mayurbhanj for blackmailing woman with morphed obscene photos</p>
+        <a class="read-more" href="https://ommcomnews.com/odisha-news/youth-arrested-in-mayurbhanj-for-blackmailing-woman-with-morphed-obscene-photos/?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 22 -->
+    <div class="card" style="background-image:url('https://tse3.mm.bing.net/th/id/OIP.45Dv76KxWlo83cbRXVmnzwHaDn?pid=Api&P=0&h=180');">
+      <div class="card-content">
+        <p class="desc">Bhadrak youth held for blackmailing ex-girlfriend with morphed obscene photos</p>
+        <a class="read-more" href="https://ommcomnews.com/odisha-news/bhadrak-youth-held-for-blackmailing-ex-girlfriend-with-morphed-obscene-photos/?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 23 -->
+    <div class="card" style="background-image:url('https://tse3.mm.bing.net/th/id/OIP.JJM04tnlI6fWF1lEbvsDLQHaEo?pid=Api&P=0&h=180');">
+      <div class="card-content">
+        <p class="desc">25-year-old arrested for morphing photos and blackmailing in Visakhapatnam</p>
+        <a class="read-more" href="https://www.thehindu.com/news/cities/Visakhapatnam/25-year-old-arrested-for-morphing-photos-of-girl-and-blackmailing-her-in-visakhapatnam/article66764555.ece" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 24 (duplicate of 20 kept intentionally) -->
+    <div class="card" style="background-image:url('https://media.newindianexpress.com/newindianexpress%2F2024-08-24%2Fjpc4wx91%2FANI_20240824034559.jpg?w=1024&auto=format%2Ccompress&fit=max');">
+      <div class="card-content">
+        <p class="desc">Man arrested for blackmailing minor girl using morphed photographs in Puducherry</p>
+        <a class="read-more" href="https://www.newindianexpress.com/states/tamil-nadu/2025/Jan/21/man-arrested-for-blackmailing-minor-girl-using-morphed-photographs-in-puducherry?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 25 -->
+    <div class="card" style="background-image:url('https://media.newindianexpress.com/TNIE%2Fimport%2F2023%2F3%2F10%2Foriginal%2FCybercrime_Violence_against_women.jpg?w=1024&auto=format%2Ccompress&fit=max');">
+      <div class="card-content">
+        <p class="desc">Man held for using morphed Instagram pics to blackmail women</p>
+        <a class="read-more" href="https://www.newindianexpress.com/cities/hyderabad/2023/Dec/15/man-held-for-using-morphed-insta-pics-to-blackmail-women-2641702.html" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 26 -->
+    <div class="card" style="background-image:url('https://tse3.mm.bing.net/th/id/OIP.WJkQCTG2p_2IXUhKAvTkZQHaE6?pid=Api&P=0&h=180');">
+      <div class="card-content">
+        <p class="desc">Rajasthan woman's pictures morphed; blackmail attempt for Rs 20L</p>
+        <a class="read-more" href="https://www.news18.com/india/rajasthan-woman-judges-pictures-morphed-blackmail-attempt-for-rs-20l-7250917.html?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 27 -->
+    <div class="card" style="background-image:url('https://i.ndtvimg.com/i/2016-05/arrest-generic_650x400_71463458726.jpg?downsize=773:435');">
+      <div class="card-content">
+        <p class="desc">Kerala man arrested for using morphed photos to extort from woman</p>
+        <a class="read-more" href="http://ndtv.com/kerala-news/kerala-man-used-morphed-photos-videos-to-extort-rs-8-lakh-from-woman-2048697?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 28 -->
+    <div class="card" style="background-image:url('https://tse2.mm.bing.net/th/id/OIP.vYWwHSStsMNnaNRVLYAWbAHaEK?pid=Api&P=0&h=180');">
+      <div class="card-content">
+        <p class="desc">IIT-Delhi student blackmailed girl with obscene, morphed photos</p>
+        <a class="read-more" href="https://indianexpress.com/article/india/india-others/iitdelhi-student-blackmailed-girl-with-obscene-morphed-photos/?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 29 -->
+    <div class="card" style="background-image:url('https://tse3.mm.bing.net/th/id/OIP.-bCpgycbF97ruIAuOSfuawAAAA?pid=Api&P=0&h=180');">
+      <div class="card-content">
+        <p class="desc">Gurgaon student pays Rs 80 lakh to blackmailers using grandmother’s bank account</p>
+        <a class="read-more" href="https://english.mathrubhumi.com/news/crime/gurgaon-girl-blackmailed-with-morphed-photos-extorted-lakhs-over-months-88089b6b" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 30 -->
+    <div class="card" style="background-image:url('https://static.toiimg.com/thumb/msid-123792136,imgsize-13738,width-400,height-225,resizemode-72/man-held-for-sexually-assaulting-woman-blackmailing-her-in-mumbai.jpg');">
+      <div class="card-content">
+        <p class="desc">Man held for sexually assaulting woman and blackmailing her in Mumbai</p>
+        <a class="read-more" href="https://timesofindia.indiatimes.com/city/mumbai/man-held-for-sexually-assaulting-woman-blackmailing-her-in-mumbai/articleshow/123792137.cms?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 31 -->
+    <div class="card" style="background-image:url('https://static.toiimg.com/thumb/msid-117517792,imgsize-100919,width-400,height-225,resizemode-72/ballygunge-engg-alleges-online-stalking-by-former-classmate.jpg');">
+      <div class="card-content">
+        <p class="desc">Ballygunge engineering student alleges online stalking by former classmate</p>
+        <a class="read-more" href="https://timesofindia.indiatimes.com/city/kolkata/ballygunge-engg-alleges-online-stalking-by-former-classmate/articleshow/123770492.cms?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 32 -->
+    <div class="card" style="background-image:url('https://akm-img-a-in.tosshub.com/indiatoday/images/story/202012/6b2eda26-0e33-4aa0-ac26-e422b3_1200x768.jpeg?size=690:388');">
+      <div class="card-content">
+        <p class="desc">Noida youth held for blackmailing women after morphing Instagram photos</p>
+        <a class="read-more" href="https://www.indiatoday.in/cities/noida/story/noida-youth-blackmailing-women-morphing-instagram-photos-1754530-2020-12-30?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 33 -->
+    <div class="card" style="background-image:url('https://c.ndtvimg.com/2025-05/cm1k7qsg_delhi-police-arrests-man-for-cyber-blackmailing_625x300_30_May_25.jpg?im=FaceCrop,algorithm=dnn,width=773,height=435');">
+      <div class="card-content">
+        <p class="desc">Ex-lover turned blackmailer: Delhi police arrest man for threatening woman</p>
+        <a class="read-more" href="https://www.ndtv.com/india-news/woman-threatened-with-acid-attack-photo-leak-blackmailer-is-her-ex-lover-8547393" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 34 -->
+    <div class="card" style="background-image:url('https://images.indianexpress.com/2025/06/mumbai-man.jpg?w=640');">
+      <div class="card-content">
+        <p class="desc">Man befriended and blackmailed 300 women on Instagram — arrested</p>
+        <a class="read-more" href="https://indianexpress.com/article/cities/mumbai/police-suspect-blackmail-over-300-women-10070574/?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 35 -->
+    <div class="card" style="background-image:url('https://static.toiimg.com/thumb/msid-123289502,imgsize-31996,width-400,height-225,resizemode-72/123289502.jpg');">
+      <div class="card-content">
+        <p class="desc">Man held for uploading woman's morphed photos online</p>
+        <a class="read-more" href="https://timesofindia.indiatimes.com/city/coimbatore/man-held-for-uploading-womans-morphed-photos-online/articleshow/123289505.cms?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 36 -->
+    <div class="card" style="background-image:url('https://static.toiimg.com/thumb/msid-117622038,imgsize-368632,width-400,height-225,resizemode-72/117622038.jpg');">
+      <div class="card-content">
+        <p class="desc">Man held for creating fake social media accounts to harass women</p>
+        <a class="read-more" href="https://timesofindia.indiatimes.com/city/jaipur/man-held-for-creating-fake-social-media-a/cs-to-harass-women/articleshow/123150496.cms?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 37 -->
+    <div class="card" style="background-image:url('https://imagesvs.oneindia.com/webp/img/2024/12/arrest-1733555248.jpg');">
+      <div class="card-content">
+        <p class="desc">Bengaluru man uses explicit videos of girlfriend to blackmail her, extorts Rs 2.5 crore</p>
+        <a class="read-more" href="https://www.oneindia.com/bengaluru/bengaluru-man-uses-explicit-videos-of-girlfriend-to-blackmail-her-extorts-rs-2-5-crore-arrested-4008799.html?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 38 -->
+    <div class="card" style="background-image:url('https://c.ndtvimg.com/2018-11/cmptc4o8_mobile-phone-generic-pixabay_625x300_03_November_18.jpg?im=FitAndFill,algorithm=dnn,width=773,height=435');">
+      <div class="card-content">
+        <p class="desc">Mumbai woman's morphed nude photos sent to family despite loan repayment</p>
+        <a class="read-more" href="https://www.ndtv.com/india-news/instagram-loan-app-firm-sends-mumbai-woman-morphed-nude-photos-to-relatives-money-repayment-9009270" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 39 -->
+    <div class="card" style="background-image:url('https://images.indianexpress.com/2022/09/arrest-2-9.jpg?w=640');">
+      <div class="card-content">
+        <p class="desc">Faridabad: truck driver blackmailed 85 women with morphed pictures — arrested</p>
+        <a class="read-more" href="https://indianexpress.com/article/cities/delhi/faridabad-using-morphed-pictures-truck-driver-blackmailed-85-women-arrested-8147797/?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 40 -->
+    <div class="card" style="background-image:url('https://akm-img-a-in.tosshub.com/indiatoday/images/story/202406/whatsapp-representative-image-unsplash-135532712-16x9.jpg?VersionId=_zPRxy10A0wsOkrrWHGbgSl_lYE5lzyZ&size=690:388');">
+      <div class="card-content">
+        <p class="desc">Photos of 7 women morphed & circulated on WhatsApp in Bengaluru — 4 arrested</p>
+        <a class="read-more" href="https://www.indiatoday.in/india/karnataka/story/bengaluru-women-pictures-morphed-circulated-whatsapp-instagram-accused-men-arrested-2547402-2024-06-03?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 41 -->
+    <div class="card" style="background-image:url('https://akm-img-a-in.tosshub.com/indiatoday/images/story/202507/artificial-intelligence-135854804-16x9_0.jpeg?VersionId=W_MzYIG.6MRDa8b7bd6uw9SvfU210rsP&size=690:388');">
+      <div class="card-content">
+        <p class="desc">Assam man circulates AI-morphed images of ex-girlfriend — arrested</p>
+        <a class="read-more" href="https://www.indiatoday.in/india/story/assam-man-circulates-morphed-images-ex-girlfriend-artificial-intelligence-tools-arrested-2755073-2025-07-13?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 42 -->
+    <div class="card" style="background-image:url('https://tse3.mm.bing.net/th/id/OIP.w43qpKnC_1bZbcXmvTINcQHaE8?pid=Api&P=0&h=180');">
+      <div class="card-content">
+        <p class="desc">Youth arrested for blackmailing girls with morphed images</p>
+        <a class="read-more" href="https://www.thehindu.com/news/national/andhra-pradesh/youth-arrested-for-blackmailing-girls-with-morphed-images/article32095206.ece?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+    <!-- 43 -->
+    <div class="card" style="background-image:url('https://akm-img-a-in.tosshub.com/indiatoday/images/story/201910/rglkrtgkfglkthtrg_0.png?size=690:388');">
+      <div class="card-content">
+        <p class="desc">Mumbai: youth held for blackmailing minor using morphed images/videos</p>
+        <a class="read-more" href="https://www.indiatoday.in/crime/story/mumbai-youth-held-blackmailing-minor-using-morphed-images-videos-her-1612659-2019-10-24?utm_source=chatgpt.com" target="_blank" rel="noopener">Read More</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

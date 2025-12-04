@@ -1,0 +1,142 @@
+{# templates/ehome.html #}
+{% extends "base.html" %}
+
+{% block title %}Home — Mahila Suraksha Nyayavani{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<style>
+  /* Minimal hero layout if you don't have home.css yet */
+  .hero {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+  .hero p { color: #555; margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto; }
+  .cta-row { margin-top: 20px; }
+  .btn-primary {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;  
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* Tabs / quick links */
+  .quick-actions {
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    margin-top:28px;
+    flex-wrap:wrap;
+  }
+  .card-mini {
+    background: #fff;
+    color: #222;
+    border-radius:10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    padding:14px;
+    width:280px;
+    text-align:left;
+  }
+  .card-mini h3 { margin:0 0 8px 0; font-size:1.05rem; }
+  .card-mini p { margin:0 0 12px 0; color:#555; font-size:0.95rem; }
+  .card-actions { display:flex; gap:8px; }
+
+  /* larger preview area */
+  .preview-row { display:flex; gap:18px; margin:36px auto; max-width:1100px; flex-wrap:wrap; justify-content:center; }
+  .preview {
+    background:#fafafa;
+    border-radius:10px;
+    padding:18px;
+    width:520px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  }
+  .preview h4 { margin:0 0 8px 0; }
+  .thumbnail {
+    width:100%;
+    height:220px;
+    border-radius:8px;
+    background-size:cover;
+    background-position:center;
+    margin-bottom:12px;
+  }
+
+  @media (max-width:900px){
+    .preview { width:100%; }
+    .card-mini { width:100%; max-width:420px; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero container">
+  <h1>Welcome to Mahila Suraksha Nyayavani</h1>
+  <p>Your safety matters. Read articles, report incidents, and get support. Use the chatbot for instant help and guidance.</p>
+
+  <div class="cta-row">
+    <a class="btn-primary" href="{{ url_for('chatbot') }}">Chat with Support</a>
+    <a class="btn-primary" href="{{ url_for('report') }}" style="margin-left:12px; background:#28a745;">Report an incident</a>
+  </div>
+
+  <div class="quick-actions" aria-hidden="false" style="margin-top:18px;">
+    <div class="card-mini" role="region" aria-label="Self defence lessons">
+      <h3>Self-Defence Lessons</h3>
+      <p>Short, practical lessons to build physical confidence — view step-by-step videos and practice drills.</p>
+      <div class="card-actions">
+        <a class="btn-primary" href="{{ url_for('selfdefence') }}" style="background:#ff6b6b;">Open Lessons</a>
+        <a class="btn-primary" href="{{ url_for('report') }}" style="background:#6c757d;">Report</a>
+      </div>
+    </div>
+
+    <div class="card-mini" role="region" aria-label="Survivor stories">
+      <h3>Survivor Stories</h3>
+      <p>Real stories, resilience and tips from survivors — watch, learn and find community support.</p>
+      <div class="card-actions">
+        <a class="btn-primary" href="{{ url_for('stories') }}" style="background:#17a2b8;">Read & Watch</a>
+        <a class="btn-primary" href="{{ url_for('help_page') }}" style="background:#6c757d;">Get Help</a>
+      </div>
+    </div>
+
+    <div class="card-mini" role="region" aria-label="Articles">
+      <h3>Read Articles</h3>
+      <p>Explore curated articles on digital, emotional and physical violence — prevention and legal guidance.</p>
+      <div class="card-actions">
+        <a class="btn-primary" href="{{ url_for('articles') }}" style="background:#343a40;">Browse Articles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Previews for the two new pages -->
+<section class="container" style="margin-top:28px;">
+  <div class="preview-row">
+    <div class="preview" aria-labelledby="preview-selfdef">
+      <h4 id="preview-selfdef">Self-Defence Lessons (Preview)</h4>
+      <div class="thumbnail" style="background-image: url('{{ url_for('static', filename='images/selfdef_preview.jpg') }}');"></div>
+      <p>Practical techniques: stance, escape moves, using everyday objects for safety and short drills you can do at home.</p>
+      <div style="margin-top:10px;">
+        <a class="btn-primary" href="{{ url_for('selfdefence') }}" style="background:#ff6b6b;">Go to Lessons</a>
+        <a class="btn-primary" href="{{ url_for('contact') }}" style="margin-left:8px;background:#6c757d;">Ask an Instructor</a>
+      </div>
+    </div>
+
+    <div class="preview" aria-labelledby="preview-stories">
+      <h4 id="preview-stories">Survivor Stories (Preview)</h4>
+      <div class="thumbnail" style="background-image: url('{{ url_for('static', filename='images/survivor_preview.jpg') }}');"></div>
+      <p>Short video testimonials and written accounts from survivors who share coping strategies and signs of recovery.</p>
+      <div style="margin-top:10px;">
+        <a class="btn-primary" href="{{ url_for('stories') }}" style="background:#17a2b8;">View Stories</a>
+        <a class="btn-primary" href="{{ url_for('help_page') }}" style="margin-left:8px;background:#6c757d;">Support Resources</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Small accessibility note -->
+<section class="container" style="max-width:900px;margin:28px auto;color:#666;">
+  <p><small>If you want these lessons or stories to appear on the navbar permanently, I can add dedicated nav links and sitemap entries — tell me which text you prefer for the menu.</small></p>
+</section>
+{% endblock %}
